@@ -1,10 +1,14 @@
-import { StackNavigationProp } from "@react-navigation/stack";
+export enum VehicleCategory{
+  TRUCK = 'TRUCK',
+  PASSENGER = 'PASSENGER',
+  SPECIAL = 'SPECIAL',
+}
 
 export interface IVehicle {
   id: string;
   vehicle: string;
   driver: string,
-  category: string,
+  category: VehicleCategory,
   tel: string
 };
 
@@ -12,3 +16,5 @@ export type RootStackParamList = {
   Vehicles: undefined;
   Vehicle: { item: IVehicle };
 };
+
+
