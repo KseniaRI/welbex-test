@@ -1,10 +1,12 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import MapView from "react-native-maps";
 import { RouteProp } from "@react-navigation/native";
-import { RootStackParamList } from "../../types";
-import DetailContainer from "../../components/DetailContainer";
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import * as Linking from 'expo-linking';
+
+import { RootStackParamList } from "../../types";
+import DetailContainer from "../../components/DetailContainer";
 
 interface VehicleScreenProps {
   route: RouteProp<RootStackParamList, 'Vehicle'>;
@@ -12,6 +14,32 @@ interface VehicleScreenProps {
 
 const VehicleScreen = ({ route }: VehicleScreenProps) => {
     const { category, driver, tel } = route.params.item;
+
+    const makePhoneCall = (phoneNumber: string) => {
+        const url = `tel:${phoneNumber}`;
+        Linking.canOpenURL(url)
+          .then((supported) => {
+            if (supported) {
+              return Linking.openURL(url);
+            } else {
+              Alert.alert("Не удалось осуществить звонок");
+            }
+          })
+          .catch((error) => console.log("Ошибка: ", error));
+    };
+
+    const openWhatsAppChat = (phoneNumber: string) => {
+        const url = `whatsapp://send?phone=${phoneNumber}`;
+        Linking.canOpenURL(url)
+          .then((supported) => {
+            if (supported) {
+              return Linking.openURL(url);
+            } else {
+              Alert.alert("WhatsApp не установлен на устройстве");
+            }
+          })
+          .catch((error) => console.log("Ошибка: ", error));
+    };
 
     return ( 
         <View style={styles.container}>
@@ -23,10 +51,10 @@ const VehicleScreen = ({ route }: VehicleScreenProps) => {
                 <DetailContainer detailKey="Водитель" detail={driver} />
                 <DetailContainer detailKey="Телефон" detail={tel} />
                 <View style={styles.contacts}>
-                    <TouchableOpacity style={styles.socialContainer}>
+                    <TouchableOpacity style={styles.socialContainer} onPress={() => makePhoneCall(tel)}>
                         <Ionicons name="call" size={34} color="black" />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.socialContainer}>
+                    <TouchableOpacity style={styles.socialContainer} onPress={()=>openWhatsAppChat(tel)}>
                         <FontAwesome name="whatsapp" size={34} color="black" />
                     </TouchableOpacity>
                 </View>
