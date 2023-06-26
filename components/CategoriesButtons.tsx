@@ -57,15 +57,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#f0e68c',
         paddingTop: 10,
         paddingBottom: 10,
-        marginTop: 10,
+        marginTop: 30,
         alignItems: "center"
     },
     categoryBtn: {
         width: 40,
         height: 40,
-        borderRadius: 50,
+        borderRadius: 20,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        borderWidth: 1,
+        borderColor: "#fff",
     }
 })
 

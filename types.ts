@@ -15,6 +15,8 @@ export interface IVehicle {
 export type RootStackParamList = {
   Vehicles: undefined;
   Vehicle: { item: IVehicle };
+  Settings: undefined;
+  Map: undefined;
 };
 
 
