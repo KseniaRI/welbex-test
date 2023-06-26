@@ -3,70 +3,70 @@
         "id": "1",
         "vehicle": "Камаз",
         "driver": "Иван",
-        "category": "Грузовой",
+        "category": "TRUCK",
         "tel": "012345"
    },
    {
         "id": "2",
         "vehicle": "Бетономешалка",
         "driver": "Максим",
-        "category": "Спецтранспорт" ,
+        "category": "SPECIAL" ,
          "tel": "123456"
    },
    {
         "id": "3",
         "vehicle": "Лада",
         "driver": "Сергей",
-        "category": "Пассажирский" ,
+        "category": "PASSENGER" ,
          "tel": "234567"
    },
    {
         "id": "4",
         "vehicle": "Камаз",
         "driver": "Тарас",
-        "category": "Грузовой",
+        "category": "TRUCK",
         "tel": "345678"
    },
    {
         "id": "5",
         "vehicle": "Лада",
         "driver": "Петр",
-        "category": "Пассажирский",
+        "category": "PASSENGER",
         "tel": "456789"
    },
    {
         "id": "6",
         "vehicle": "Камаз",
         "driver": "Андрей",
-        "category": "Грузовой",
+        "category": "TRUCK",
         "tel": "567891" 
    },
    {
         "id": "7",
         "vehicle": "Камаз",
         "driver": "Дмитрий",
-        "category": "Грузовой",
+        "category": "TRUCK",
         "tel": "678911"  
    },
    {
         "id": "8",
         "vehicle": "Лада",
         "driver": "Любовь",
-        "category": "Пассажирский",
+        "category": "PASSENGER",
         "tel": "678912"  
    },
    {
         "id": "9",
         "vehicle": "Камаз",
         "driver": "Зинаида",
-        "category": "Грузовой",
+        "category": "TRUCK",
         "tel": "678913"
    },
    {
         "id": "10",
         "vehicle": "Бетономешалка",
         "driver": "Анатолий",
-        "category": "Спецтранспорт",
+        "category": "SPECIAL",
         "tel": "678914"
    }
 ]
