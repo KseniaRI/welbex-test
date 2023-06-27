@@ -1,5 +1,5 @@
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import MapView from "react-native-maps";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps"
 import { RouteProp } from "@react-navigation/native";
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
@@ -13,7 +13,8 @@ interface VehicleScreenProps {
 }
 
 const VehicleScreen = ({ route }: VehicleScreenProps) => {
-    const { category, driver, tel } = route.params.item;
+    const { id, category, vehicle: vehicleName, driver, tel, coordinate } = route.params.item;
+    const { latitude, longitude } = coordinate;
 
     const makePhoneCall = (phoneNumber: string) => {
         const url = `tel:${phoneNumber}`;
@@ -44,7 +45,24 @@ const VehicleScreen = ({ route }: VehicleScreenProps) => {
     return ( 
         <View style={styles.container}>
             <View style={styles.mapContainer}>
-                <MapView style={styles.map} />
+                <MapView
+                    style={styles.map}
+                    provider={PROVIDER_GOOGLE}
+                    region={{
+                        latitude: 45.6496,
+                        longitude: 9.8295,
+                        latitudeDelta: 1.5,
+                        longitudeDelta: 1.5,
+                    }}
+                >
+                    <Marker
+                        key={id}
+                        coordinate={{ latitude, longitude}}
+                        title={vehicleName}
+                        description={driver}
+                        pinColor="#000"
+                    />
+                </MapView>
             </View>
             <View style={styles.detailsContainer}>
                 <DetailContainer detailKey="Категория ТС" detail={category} />

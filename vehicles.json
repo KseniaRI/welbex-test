@@ -4,69 +4,109 @@
         "vehicle": "Камаз",
         "driver": "Иван",
         "category": "TRUCK",
-        "tel": "012345"
+        "tel": "012345",
+        "coordinate": {
+               "latitude": 45.381677,
+               "longitude": 9.027142
+        }
    },
    {
         "id": "2",
         "vehicle": "Бетономешалка",
         "driver": "Максим",
         "category": "SPECIAL" ,
-         "tel": "123456"
+         "tel": "123456",
+         "coordinate": {
+               "latitude": 45.475687,
+               "longitude": 8.999427
+        }
    },
    {
         "id": "3",
         "vehicle": "Лада",
         "driver": "Сергей",
         "category": "PASSENGER" ,
-         "tel": "234567"
+         "tel": "234567",
+          "coordinate": {
+               "latitude": 45.478926,
+            "longitude": 9.332008
+          }
    },
    {
         "id": "4",
         "vehicle": "Камаз",
         "driver": "Тарас",
         "category": "TRUCK",
-        "tel": "345678"
+        "tel": "345678",
+        "coordinate": {
+               "latitude": 45.295634,
+               "longitude": 9.117216
+        }
    },
    {
         "id": "5",
         "vehicle": "Лада",
         "driver": "Петр",
         "category": "PASSENGER",
-        "tel": "456789"
+        "tel": "456789",
+        "coordinate": {
+               "latitude": 45.295634,
+               "longitude": 9.117216
+        }
    },
    {
         "id": "6",
         "vehicle": "Камаз",
         "driver": "Андрей",
         "category": "TRUCK",
-        "tel": "567891" 
+        "tel": "567891",
+        "coordinate": {
+               "latitude": 45.509686,
+               "longitude": 9.632255
+        }
    },
    {
         "id": "7",
         "vehicle": "Камаз",
         "driver": "Дмитрий",
         "category": "TRUCK",
-        "tel": "678911"  
+        "tel": "678911",
+         "coordinate": {
+               "latitude": 45.509686,
+               "longitude": 9.632255
+        }
    },
    {
         "id": "8",
         "vehicle": "Лада",
         "driver": "Любовь",
         "category": "PASSENGER",
-        "tel": "678912"  
+        "tel": "678912",
+         "coordinate": {
+               "latitude": 45.258254,
+               "longitude": 9.198052
+        }
    },
    {
         "id": "9",
         "vehicle": "Камаз",
         "driver": "Зинаида",
         "category": "TRUCK",
-        "tel": "678913"
+        "tel": "678913",
+        "coordinate": {
+               "latitude": 45.258254,
+               "longitude": 9.198052
+        }
    },
    {
         "id": "10",
         "vehicle": "Бетономешалка",
         "driver": "Анатолий",
         "category": "SPECIAL",
-        "tel": "678914"
+        "tel": "678914",
+        "coordinate": {
+               "latitude": 45.258254,
+               "longitude": 9.198052
+        }
    }
 ]

@@ -1,10 +1,42 @@
 import { StyleSheet, View } from "react-native"
-import MapView from "react-native-maps";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps"
+import { RouteProp } from "@react-navigation/native";
+import { IVehicle, RootStackParamList } from "../../types";
 
-const MapScreen = () => {
+interface VehiclesScreenProps {
+  route: RouteProp<RootStackParamList, 'Vehicles'>;
+}
+
+const MapScreen = ({route}: VehiclesScreenProps ) => {
+    const vehicles = route.params.filteredVehicles;
+
     return (
         <View style={styles.container}>
-            <MapView style={styles.map} />  
+            <MapView
+                provider={PROVIDER_GOOGLE}
+                style={styles.map}
+                region={{
+                    latitude: 45.6496,
+                    longitude: 9.8295,
+                    latitudeDelta: 1.5,
+                    longitudeDelta: 1.5,
+                }}
+            >
+                {vehicles.map((vehicle: IVehicle) => {
+                    const { id, vehicle: vehicleName, driver, coordinate } = vehicle;
+                    const { latitude, longitude } = coordinate;
+                
+                    return(
+                        <Marker
+                            key={id}
+                            coordinate={{ latitude, longitude}}
+                            title={vehicleName}
+                            description={driver}
+                            pinColor="#000"
+                        />
+                    )
+                })}
+            </MapView>  
         </View>
     )
 };
@@ -14,10 +46,8 @@ const styles = StyleSheet.create({
         flex: 1,
         marginHorizontal: 20,
     },
-   
     map: {
-        width: '100%',
-        height: '100%',
+        flex: 1
     },
 })
 
