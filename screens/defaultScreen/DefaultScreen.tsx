@@ -24,9 +24,13 @@ const DefaultScreen = ({ navigation }: DefaultScreenProps) => {
     const [selectedCategories, setSelectedCategories] = useState<VehicleCategory[]>([]);
     const [filteredVehicles, setFilteredVehicles] = useState<IVehicle[]>(vehiclesData);
 
-      useEffect(() => {
+    // effect that tracks changes to selected categories
+
+    useEffect(() => {
         selectedCategories.length === 0 && setFilteredVehicles(vehiclesData);
     }, [selectedCategories])
+
+    // Category selection function. Activates/deactivates selection when clicked again
 
     const handleCategorySelect = (selectedCategory: VehicleCategory) => {
         if (selectedCategories.includes(selectedCategory)) {
@@ -35,6 +39,8 @@ const DefaultScreen = ({ navigation }: DefaultScreenProps) => {
             setSelectedCategories([...selectedCategories, selectedCategory]);
         }
     };
+
+    // Function that applies the selection
 
     const handleApplyFilter = () => {
         const filteredVehiclesData: IVehicle[] = vehiclesData.filter(vehicleData => selectedCategories.includes(vehicleData.category));
