@@ -3,20 +3,25 @@ export enum VehicleCategory{
   PASSENGER = 'PASSENGER',
   SPECIAL = 'SPECIAL',
 }
+interface ICoordinate{
+  longitude: number,
+  latitude: number
+}
 
 export interface IVehicle {
   id: string;
   vehicle: string;
   driver: string,
   category: VehicleCategory,
-  tel: string
+  tel: string,
+  coordinate: ICoordinate
 };
 
 export type RootStackParamList = {
-  Vehicles: undefined;
+  Vehicles: {filteredVehicles: IVehicle[]};
   Vehicle: { item: IVehicle };
   Settings: undefined;
-  Map: undefined;
+  Map: {filteredVehicles: IVehicle[]}
 };
 
 

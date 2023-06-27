@@ -18,7 +18,12 @@
       "supportsTablet": true
     },
     "android": {
-      "permissions": ["CALL_PHONE"],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDWAw26ZkiLrTCPoqeNC4sIfSGaMDamACM"
+        }
+      },
+      "permissions": ["CALL_PHONE", "ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"

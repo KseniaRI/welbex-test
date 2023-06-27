@@ -30,7 +30,7 @@ const DefaultScreen = ({ navigation }: DefaultScreenProps) => {
   };
 
   const handleApplyFilter = () => {
-    const filteredVehiclesData = vehiclesData.filter(vehicleData => selectedCategories.includes(vehicleData.category));
+    const filteredVehiclesData: IVehicle[] = vehiclesData.filter(vehicleData => selectedCategories.includes(vehicleData.category));
     setFilteredVehicles(filteredVehiclesData);
   }
 
@@ -53,7 +53,7 @@ const DefaultScreen = ({ navigation }: DefaultScreenProps) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.mapBtn}
-          onPress={() => navigation.navigate('Map')}
+        onPress={() => navigation.navigate('Map', {filteredVehicles})}
         >
           <MaterialCommunityIcons name="map-search-outline" size={24} color="black" />
         </TouchableOpacity>
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10
   },
   btnTxt: {
-    fontSize: 18
+    fontSize: 18,
   }
 });
 
