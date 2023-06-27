@@ -1,7 +1,8 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import { VehicleCategory } from "../types"
+import { VehicleCategory } from "../../types";
+import { styles } from './CategoriesButtonsStyles';
 
 interface Props{
     handleCategorySelect: (category: VehicleCategory) => void,
@@ -13,7 +14,8 @@ interface ICategory {
     icon: "truck-cargo-container" | "bus" | "tanker-truck"
 }
 
-const CategoriesButtons = ({handleCategorySelect, selectedCategories}: Props) => {
+const CategoriesButtons = ({ handleCategorySelect, selectedCategories }: Props) => {
+    
     const categories: ICategory[] = [
         {
             categoryName: VehicleCategory.TRUCK,
@@ -48,27 +50,5 @@ const CategoriesButtons = ({handleCategorySelect, selectedCategories}: Props) =>
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    btnsBar: {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-around",
-        backgroundColor: '#f0e68c',
-        paddingTop: 10,
-        paddingBottom: 10,
-        marginTop: 30,
-        alignItems: "center"
-    },
-    categoryBtn: {
-        width: 40,
-        height: 40,
-        borderRadius: 20,
-        justifyContent: "center",
-        alignItems: "center",
-        borderWidth: 1,
-        borderColor: "#fff",
-    }
-})
 
 export default CategoriesButtons

@@ -1,9 +1,9 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import DefaultScreen from "./DefaultScreen";
-import VehicleScreen from "./VehicleScreen";
-import { RootStackParamList } from "../../types";
-import MapScreen from "./MapScreen";
-import SettingsScreen from "./SettingsScreen";
+import DefaultScreen from "./defaultScreen/DefaultScreen";
+import VehicleScreen from "./vehicleScreen/VehicleScreen";
+import { RootStackParamList } from "../types";
+import MapScreen from "./mapScreen/MapScreen";
+import SettingsScreen from "./settingsScreen/SettingsScreen";
 
 const NestedScreen = createStackNavigator<RootStackParamList>();
 

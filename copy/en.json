@@ -1,0 +1,24 @@
+{
+    "title":{
+        "vehicles": "Vehicles",
+        "language": "Choose language"
+    },
+    "buttons": {
+        "choose": "Choose category",
+        "applicate": "Applicate",
+        "ru": "RU",
+        "en": "EN"
+    },
+    "details":{
+        "vehicle": "Vehicle",
+        "category": "Сategory",
+        "driver": "Driver",
+        "tel": "Tel"
+    },
+    "alerts": {
+        "call": "Failed to make a call",
+        "whatsapp": "WhatsApp is not installed on the device",
+        "lang": "The language has been changed to"
+    }
+    
+}
