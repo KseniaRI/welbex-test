@@ -23,7 +23,7 @@
    },
    {
         "id": "3",
-        "vehicle": "Лада",
+        "vehicle": "ЗИЛ",
         "driver": "Сергей",
         "category": "PASSENGER" ,
          "tel": "234567",
@@ -45,7 +45,7 @@
    },
    {
         "id": "5",
-        "vehicle": "Лада",
+        "vehicle": "ЗИЛ",
         "driver": "Петр",
         "category": "PASSENGER",
         "tel": "456789",

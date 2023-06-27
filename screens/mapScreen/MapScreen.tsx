@@ -1,10 +1,12 @@
-import { StyleSheet, View } from "react-native"
-import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps"
+import { View } from "react-native";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { RouteProp } from "@react-navigation/native";
+
 import { IVehicle, RootStackParamList } from "../../types";
+import { styles } from './MapScreenStyles';
 
 interface VehiclesScreenProps {
-  route: RouteProp<RootStackParamList, 'Vehicles'>;
+  route: RouteProp<RootStackParamList, 'Map'>;
 }
 
 const MapScreen = ({route}: VehiclesScreenProps ) => {
@@ -32,7 +34,6 @@ const MapScreen = ({route}: VehiclesScreenProps ) => {
                             coordinate={{ latitude, longitude}}
                             title={vehicleName}
                             description={driver}
-                            pinColor="#000"
                         />
                     )
                 })}
@@ -40,15 +41,5 @@ const MapScreen = ({route}: VehiclesScreenProps ) => {
         </View>
     )
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginHorizontal: 20,
-    },
-    map: {
-        flex: 1
-    },
-})
 
 export default MapScreen;
